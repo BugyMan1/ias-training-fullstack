@@ -1,4 +1,4 @@
-package co.com.ias.training;
+package co.com.ias.training.controller;
 
 import org.springframework.web.bind.annotation.*;
 
