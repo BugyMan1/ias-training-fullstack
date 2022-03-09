@@ -11,4 +11,9 @@ public class MaintenanceDescription {
         Validate.isTrue(value.trim().length() < 512, "Description cannot be longer than 512 characters");
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return value;
+    }
 }

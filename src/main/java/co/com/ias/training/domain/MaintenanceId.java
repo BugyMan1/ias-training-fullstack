@@ -10,4 +10,9 @@ public class MaintenanceId {
         Validate.isTrue(value.trim().length() == 36, "ID must be exactly 36 characters long");
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return value;
+    }
 }

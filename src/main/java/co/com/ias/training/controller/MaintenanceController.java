@@ -6,6 +6,7 @@ import co.com.ias.training.domain.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -24,20 +25,20 @@ public class MaintenanceController {
     public MaintenanceDTO getMaintenanceById(@PathVariable("id") String serviceId) {
         return new MaintenanceDTO(
                 serviceId,
-                new Date(),
-                new Date(),
+                LocalDateTime.now(),
+                LocalDateTime.now(),
                 "fakeDescription"
         );
     }
 
     @PostMapping
     public MaintenanceDTO createMaintenance(@RequestBody MaintenanceInput maintenanceInput) throws ParseException {
-        Maintenance maintenance = new Maintenance(
+        MaintenanceService maintenanceService = new MaintenanceService(
                 new MaintenanceId(UUID.randomUUID().toString()),
-                new MaintenanceStartDate(maintenanceInput.getStartDate()),
-                new MaintenanceEndDate(maintenanceInput.getEndDate()),
+                maintenanceInput.getStartDate(),
+                maintenanceInput.getEndDate(),
                 new MaintenanceDescription(maintenanceInput.getDescription())
         );
-        return MaintenanceDTO.fromDomain(maintenance);
+        return MaintenanceDTO.fromDomain(maintenanceService);
     }
 }

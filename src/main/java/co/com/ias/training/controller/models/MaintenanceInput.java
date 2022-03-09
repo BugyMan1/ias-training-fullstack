@@ -1,31 +1,31 @@
 package co.com.ias.training.controller.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class MaintenanceInput {
-    private Date startDate;
-    private Date endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String description;
 
-    public MaintenanceInput(Date startDate, Date endDate, String description) {
+    public MaintenanceInput(LocalDateTime startDate, LocalDateTime endDate, String description) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 

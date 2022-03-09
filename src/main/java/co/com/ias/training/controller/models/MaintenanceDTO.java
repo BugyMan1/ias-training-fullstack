@@ -1,33 +1,28 @@
 package co.com.ias.training.controller.models;
 
-import co.com.ias.training.domain.Maintenance;
+import co.com.ias.training.domain.MaintenanceService;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class MaintenanceDTO {
     private String serviceId;
-    private Date startDate;
-    private Date endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String description;
 
-    public MaintenanceDTO(String serviceId, Date startDate, Date endDate, String description) {
+    public MaintenanceDTO(String serviceId, LocalDateTime startDate, LocalDateTime endDate, String description) {
         this.serviceId = serviceId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
     }
 
-    public static MaintenanceDTO fromDomain(Maintenance maintenance) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date startDate = formatter.parse(maintenance.getStartDate().toString());
-        Date endDate = formatter.parse(maintenance.getEndDate().toString());
+    public static MaintenanceDTO fromDomain(MaintenanceService maintenanceService) {
         return new MaintenanceDTO(
-                maintenance.getServiceId().toString(),
-                startDate,
-                endDate,
-                maintenance.getDescription().toString()
+                maintenanceService.getServiceId().toString(),
+                maintenanceService.getStartDate(),
+                maintenanceService.getEndDate(),
+                maintenanceService.getDescription().toString()
         );
     }
 
@@ -39,19 +34,19 @@ public class MaintenanceDTO {
         this.serviceId = serviceId;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
