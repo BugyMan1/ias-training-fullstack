@@ -1,4 +1,4 @@
-package co.com.ias.training.controller.models;
+package co.com.ias.training.infrastructure.controllers.models;
 
 import java.time.LocalDateTime;
 

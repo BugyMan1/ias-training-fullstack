@@ -1,11 +1,10 @@
-package co.com.ias.training.repository.models;
+package co.com.ias.training.infrastructure.gateways.models;
 
-import co.com.ias.training.domain.*;
+import co.com.ias.training.core.domain.MaintenanceDescription;
+import co.com.ias.training.core.domain.MaintenanceId;
+import co.com.ias.training.core.domain.MaintenanceService;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class MaintenanceDBO {
     private String serviceId;

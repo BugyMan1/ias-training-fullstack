@@ -1,6 +1,6 @@
-package co.com.ias.training.controller.models;
+package co.com.ias.training.infrastructure.controllers.models;
 
-import co.com.ias.training.domain.MaintenanceService;
+import co.com.ias.training.core.domain.MaintenanceService;
 
 import java.time.LocalDateTime;
 

@@ -1,9 +1,6 @@
-package co.com.ias.training.controller;
+package co.com.ias.training.infrastructure.controllers;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/products")

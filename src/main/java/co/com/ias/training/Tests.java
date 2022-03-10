@@ -1,10 +1,10 @@
 package co.com.ias.training;
 
-import co.com.ias.training.domain.*;
-import org.apache.tomcat.jni.Local;
+import co.com.ias.training.core.domain.MaintenanceDescription;
+import co.com.ias.training.core.domain.MaintenanceId;
+import co.com.ias.training.core.domain.MaintenanceService;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 public class Tests {
